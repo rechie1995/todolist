@@ -2,7 +2,7 @@
 """
 ToDoList
 
-这个项目的目的是制作一个简单的代办清单程序，可以管理我的日常事物。
+这是一个简单的代办清单程序，可以管理我的日常事物。
 """
 # import argparse
 import sys
@@ -44,9 +44,10 @@ def main():
     # parser.parse_args()
     # ToDoList().list_task()
     # print(args)
-    parser = myargparse.Myargparser(usage='%(prog)s <command> [options]',
+    parser = myargparse.Myargparser(prog='todo',
+                                    usage='%(prog)s <command> [options]',
                                     description=__doc__)
-    print(parser._get_args())
+    print(parser.args)
     parser.print_help()
 
 

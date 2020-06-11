@@ -22,16 +22,37 @@ class Myargparser(object):
         self.prog = prog
         self.usage = usage
         self.description = description
+        self.args = self._get_args()
 
+    # 获取命令行输入
     def _get_args(self):
         return _sys.argv[1:]
+
+    # 添加命令
+    def add_command(self, *args, **kwargs):
+        pass
+
+    # 添加参数
+    def add_option(self, *args, **kwargs):
+        pass
+
+    # 解析命令行输入
+    def parse_args(self):
+        pass
+
+    # #####
+    # help 输出格式
+    # #####
+    def help_format(self):
+        pass
+
+    # #####
+    # print相关函数
+    # #####
 
     def _print_message(self, message):
         if message:
             _sys.stdout.write(message)
-
-    def add_command(self, *args, **kwargs):
-        pass
 
     def print_help(self):
         self._print_message(self.usage)

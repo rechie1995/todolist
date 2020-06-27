@@ -47,8 +47,9 @@ def main():
     parser = myargparse.Myargparser(prog='todo',
                                     usage='%(prog)s <command> [options]',
                                     description=__doc__)
-    print(parser.args)
-    parser.print_help()
+    # print(parser.args)
+    # parser.print_help()
+    parser.parse_args()
 
 
 if __name__ == "__main__":

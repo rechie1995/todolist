@@ -44,8 +44,7 @@ def main():
     # parser.parse_args()
     # ToDoList().list_task()
     # print(args)
-    parser = myargparse.Myargparser(prog='todo',
-                                    usage='%(prog)s <command> [options]',
+    parser = myargparse.Myargparser(usage='%(prog)s <command> [options]',
                                     description=__doc__)
     # print(parser.args)
     # parser.print_help()

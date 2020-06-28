@@ -18,10 +18,11 @@ class Myargparser(object):
         # default setting for prog
         if prog is None:
             prog = _os.path.basename(_sys.argv[0])
-
+        # String
         self.prog = prog
         self.usage = usage
         self.description = description
+        # List
         self.args = self._get_args()
         self.options = []
 
@@ -29,20 +30,23 @@ class Myargparser(object):
 
     # 获取命令行输入
     def _get_args(self):
-        return _sys.argv[1:]
+        if _sys.argv[1:]:
+            return _sys.argv[1:]
+        else:
+            return ['-h']
 
     # 添加help
     def _add_help(self):
         func = self.print_help
-        self.options.append(['-h', '--help', func])
+        self.add_option('-h', '--help', func, 'Show help.')
 
     # 添加命令
     def add_command(self, *args, **kwargs):
         pass
 
     # 添加参数
-    def add_option(self, *args, **kwargs):
-        pass
+    def add_option(self, *args):
+        self.options.append(list(args))
 
     # 解析命令行输入
     def parse_args(self):
